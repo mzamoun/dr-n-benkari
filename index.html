@@ -9,48 +9,43 @@
 
   <script src="./script.js"></script> 
  <link rel="stylesheet" href="./style.css">
-  
- <script>
-
-   
- </script>
 
 </head>
 <body>
 
-<nav id="nav" class="navbar navbar-inverse" style="display:none">
-  <div class="container-fluid">
-    <div class="navbar-header navbar-left">
-      <!-- <a class="navbar-brand" href="#">Acceuil</a> -->
-      <button id="btnAcceuil" class="navbar-brand btnAcceuil" onclick="showAcc();" >Acceuil</button>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="active"> <button id="btnPage1Menu" class="btnMenu" onclick="showPage('Page1');" >Page1</button> </li>
-      <li> <button id="btnPage2Menu" class="btnMenu" onclick="showPage('Page2');" >Page2</button> </li>
-    </ul>
+  <div id="Pages" style="width: 100%; height: 100%; display:none; ">
+
+      <nav id="nav" class="navbar navbar-inverse" >
+        <div class="container-fluid">
+          <div class="navbar-header navbar-left">
+            <!-- <a class="navbar-brand" href="#">Acceuil</a> -->
+            <button id="btnAcceuil" class="navbar-brand btnAcceuil" onclick="showAcc();" >Acceuil</button>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"> <button id="btnPage1Menu" class="btnMenu" onclick="showPage('page1');" >Page1</button> </li>
+            <!-- <li> <button id="btnPage2Menu" class="btnMenu" onclick="showPage('page2');" >Page2</button> </li> -->
+          </ul>
+        </div>
+    </nav>  
+    <iframe id="fpage" width="90%" height="90%" ></iframe>
   </div>
-</nav>
 
-<video id="myVideo" autoplay muted loop >
-  <source src="https://drive.google.com/uc?export=download&id=1OBod6wxLT7l0BrIzAUhrFXaZOsxWkfUk" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video> 
+<div id="Acc" style="width: 100%; height: 100%;">
 
-<!-- <div id="Page1" style="display:none" >
-  <?!= HtmlService.createHtmlOutputFromFile('Page1').getContent(); ?>  
-</div>  -->
-<div id="Page2" style="display:none; width:90%; height: 90%;" >
-  <?!= HtmlService.createHtmlOutputFromFile('Page2').getContent(); ?>  
-</div>
-
-<div id="content" class="content">
-  <div id="title"> DR N BENKARI </div>
-   <button id="btnPage1" class="btnMenu" onclick="showPage('Page1');" >Page1</button>
-   <button id="btnPage2" class="btnMenu" onclick="showPage('Page2');" >Page2</button>
-
-  <!-- <button id="btnPause" onclick="onPause()">Pause</button> -->
-  <div id='info' class='info' > </div>
-  <div id='err' class='err' > </div>
+    <video id="myVideo" autoplay muted loop >
+      <source src="https://drive.google.com/uc?export=download&id=1OBod6wxLT7l0BrIzAUhrFXaZOsxWkfUk" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video> 
+    
+    <div id="content" class="content">
+      <div id="title"> DR N BENKARI </div>
+      <button id="btnPage1" class="btnMenu" onclick="showPage('page1');" >Page1</button>
+      <!-- <button id="btnPage2" class="btnMenu" onclick="showPage('page2');" >Page2</button> -->
+    
+      <!-- <button id="btnPause" onclick="onPause()">Pause</button> -->
+      <div id='info' class='info' > </div>
+      <div id='err' class='err' > </div>
+    </div>
 </div>
 
 <script>
