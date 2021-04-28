@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 100%) {  /*old 300px*/
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<!-- <h2>Automatic Slideshow</h2>
+<p>Change image every 2 seconds:</p> -->
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <!-- <img src="img_nature_wide.jpg" style="width:100%"> -->
+   <img src="https://drive.google.com/uc?export=download&id=150RatbrrbwFwAmvauUpHutTUYEb6Yj2W" style="width:100%; height:100%; ">
+  <div class="text">Caption 1</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <!-- <img src="img_snow_wide.jpg" style="width:100%"> -->
+  <img src="https://drive.google.com/uc?export=download&id=1IXSTCFEomSG87iIIdRsQslmhYrNwmg8u" style="width:100%; height:100%; ">
+
+  <div class="text">Caption 2</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <!-- <img src="img_mountains_wide.jpg" style="width:100%"> -->
+  <img src="https://drive.google.com/uc?export=download&id=1u6oS30wrL-qCgnalli5RwzVjYSDXiWPo" style="width:100%; height:100%; ">
+  <div class="text">Caption 3</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var pause = 4000; //ms
+var slideIndex = -1;
+
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+  // console.log("0");
+  var i;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+function showSlides() {
+  console.log("deb");
+  slideIndex++;
+  if (slideIndex > slides.length-1) {
+    slideIndex = 0
+  }    
+
+  var prec ;
+  if(slideIndex>0) {
+    console.log(slideIndex);
+    prec = slideIndex-1;
+    slides[prec].style.display = "none";  
+    dots[prec].className = dots[prec].className.replace(" active", "");
+  }else {
+    console.log("0");
+    prec = slides.length-1;
+    slides[prec].style.display = "none";  
+    dots[prec].className = dots[prec].className.replace(" active", "");
+  }
+
+  // console.log("3");
+  slides[slideIndex].style.display = "block";  
+  dots[slideIndex].className += " active";
+  // setTimeout(showSlides, pause); 
+  console.log("fin");
+}
+
+showSlides();
+
+var myPause = setInterval(function() {
+  showSlides()
+}, pause);
+</script>
+
+</body>
+</html> 
