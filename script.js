@@ -33,17 +33,18 @@ function gotoUrl(site) {
 
       // $( window ).width() , $( window ).height()
 
-      var w0='500px';
-      var h0='400px';
+      var w = $(window).width();
+      var h = $(window).height();
+      var style = 'style=" width: 100%; height:'+h+'px"';
 
-      var w='400px';
-      var h='390px';
+      var w0=w;
+      var h0=h;
 
-      $( "#Pages" ).attr( "width",  $w0 );
-      $( "#Pages" ).attr( "height",  $h0 );
+      $( "#Pages" ).attr( "style",  style );
+      // $( "#Pages" ).attr( "height",  h0 + 'px' );
 
-      $( "#page" ).attr( "width",  $w );
-      $( "#page" ).attr( "height",  $h );
+      $( "#page" ).attr( "style",  style );
+      // $( "#page" ).attr( "height",  h + 'px' );
     
      }
 
@@ -62,6 +63,7 @@ function gotoUrl(site) {
      $('#Pages').show();
      images = imagesPages[page];
      showSlides();
+     
 
   }
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -81,12 +83,17 @@ var idDivImg='#divImg';
 var idImg = '#img';
 
 function getCompoPage() {
+   var w = $(window).width();
+   var h = $(window).height();
+   var style = 'style=" width: 100%; height:'+h+'px"';
+   console.log('getCompoPage: '+'w='+w+'; h='+h)
+  // style="display:none; width: 100%; height: 100%;"
    var s = 
-   //'<div id="divImg" style="display:none; width: 100%; height: 100%;" > ' +
-   '<img id="img" src="" />' 
+   '<div id="divImg" style="display:none; " > ' +
+   '<img id="img" src="" '+style+' />' 
   + ' <button class="prec" style="left: 20px;"  onclick="prec()"  > < </button>' 
   + '<button class="next" style="right: 20px;" onclick="next()" > > </button>' 
-   //'</div> '
+   '</div> '
  ;
  return s;
 }
@@ -123,6 +130,8 @@ function showSlides() {
      setTimeout(showSlides, pause);
      slideDateDebPrec = slideDateDeb;
   }
+
+  resizePage();
 
 
 }
