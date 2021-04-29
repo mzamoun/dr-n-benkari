@@ -22,6 +22,16 @@ function gotoUrl(site) {
 
 
      }
+     
+//////////
+     function resizePage() {
+      $( "#fpage" ).attr( "width",  $( window ).width() );
+      $( "#fpage" ).attr( "height",  $( window ).height() );
+    
+      $( "#Pages" ).attr( "width",  $( window ).width() );
+      $( "#Pages" ).attr( "height",  $( window ).height() );
+     }
+
   //////////
   function showAcc() {
      //gotoUrl('./index.html');
