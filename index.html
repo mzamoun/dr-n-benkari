@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <div id="Pages" style="width: 100%; height: 100%; display:none; ">
+  <div id="Pages" style="display:none; width: 100%; height: 100%;">
 
       <nav id="nav" class="navbar navbar-inverse" >
         <div class="container-fluid">
@@ -27,7 +27,7 @@
           </ul>
         </div>
     </nav>  
-    <iframe id="fpage" width="100%" height="100%" ></iframe>
+    <div id="page" style="width: 100%; height: 100%;" ></div>
   </div>
 
 <div id="Acc" style="width: 100%; height: 100%;">
@@ -66,7 +66,7 @@ function onPause() {
 
 
 $( window ).resize(function() {
-  resizePage();
+  //resizePage();
 
 });
 
