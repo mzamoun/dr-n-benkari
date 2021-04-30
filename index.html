@@ -8,23 +8,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <script src="./script.js"></script> 
+  <script src="./pageSlide.js"></script> 
+  <script src="./pageVideo.js"></script> 
  <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 
-  <div id="Pages" style="display:none; width: 100%; height: 100%;">
-
-      <!-- <nav id="nav" class="navbar navbar-inverse" >
-        <div class="container-fluid">
-          <div class="navbar-header navbar-left">
-            <button id="btnAcceuil" class="navbar-brand btnAcceuil" onclick="showAcc();" >Acceuil</button>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"> <button id="btnPage1Menu" class="btnMenu" onclick="showPage('page1');" >Page1</button> </li>
-          </ul>
-        </div>
-    </nav>   -->
+  <div id="Menu" style="width: 100%; ">
 
     <!-- https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_navbar_collapse -->
     <nav class="navbar navbar-inverse">
@@ -37,10 +28,8 @@
           </button>
           <button id="btnAcceuil" class="navbar-brand btnAcceuil" onclick="showAcc();" >Acceuil</button>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active"> <button id="btnPage1Menu" class="btnMenu" onclick="showPage('page1');" >News</button> </li>
-            <li > <button id="btnRegister" class="btnMenu" onclick="alert('not implemented yet!');" >Register</button> </li>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+          <ul class="nav navbar-nav" id="menusPages">
           </ul>
           <!-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -49,44 +38,18 @@
         </div>
       </div>
     </nav>
+    <!-- <div id='info' class='info' > </div>
+    <div id='err' class='err' > </div> -->
 
-    <div id="page" style="width: 100%; height: 100%;" ></div>
   </div>
 
-<div id="Acc" style="width: 100%; height: 100%;">
-
-    <video id="myVideo" autoplay muted loop >
-      <source src="res/Movie_combined_harat_Trim.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video> 
-    
-    <div id="content" class="content">
-      <div id="title" style="font-size: 40px;"> DR N BENKARI </div>
-      <button id="btnPage1" class="btnMenu" onclick="showPage('page1');" >Page1</button>
-      <!-- <button id="btnPage2" class="btnMenu" onclick="showPage('page2');" >Page2</button> -->
-    
-      <!-- <button id="btnPause" onclick="onPause()">Pause</button> -->
-      <div id='info' class='info' > </div>
-      <div id='err' class='err' > </div>
-    </div>
-</div>
+  <div id="page" ></div>
 
 <script>
 
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("btnPause");
+loadDiv('#menusPages', getCompoMenus() );  
 
-function onPause() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
-
-
+showAcc();
 
 $( window ).resize(function() {
   resizePage();
