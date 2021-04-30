@@ -123,15 +123,6 @@ function showSlides() {
 
    slideDateDeb = new Date();
 
-   // if(slideDateDebPrec!=null) {
-   //    //console.log('slideDateDebPrec:' +  slideDateDebPrec.getTime());
-   //    //console.log('slideDateDeb:' + slideDateDeb.getTime() );
-   //    //var diff = slideDateDeb.getTime() - slideDateDebPrec.getTime();
-   //   // console.log('diff:' + diff);
-   // }
-
-
-
    if(slideIndexCur <0 ) {
       slideIndexCur=0;
       slideIndexPrec = images.length-1;
@@ -167,7 +158,6 @@ function showSlides() {
 }
 
 function prec() {
-  //slideIndexCur--;
   slideIndexCur--;
   playFromBtn=true;
   showSlides();
