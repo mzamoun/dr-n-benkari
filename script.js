@@ -101,7 +101,8 @@ function getCompoPage() {
    '<div id="divImg" style="display:none; text-align:center; " > ' 
    +'<label for="autoplay">Auitoplay</label> '
    + '<input id="autoplay" type="checkbox" value="autoplay" name="autoplay" onclick="onAutoplayClicked()" checked > '
-   + '<label id="numSlide"></label>'
+   + '<label id="numSlide"></label> '
+   + '<label id="nomSlide"></label> '
   + '<img id="img" src="" '+style+' />' 
   + ' <button class="prec" style="left: 20px;"  onclick="prec()"  > < </button>' 
   + '<button class="next" style="right: 20px;" onclick="next()" > > </button>' 
@@ -110,11 +111,17 @@ function getCompoPage() {
  return s;
 }
 
-function setNumSlide() {
+function setInfosSlide() {
    var n = slideIndexCur+1;
    var total = images.length;
    var s = n + '/' + total;
    $('#numSlide').text(s);
+   var nom = images[slideIndexCur];
+   nom = nom.replace('res/', '');
+   nom = nom.replace(/_/gi, ' ');
+   nom = nom.replace(/img[0-9]+/, ' ');
+   nom = nom.replace('.jpg', '');
+   $('#nomSlide').text(nom);
 }
 
 function showSlides() {
@@ -147,7 +154,7 @@ function showSlides() {
     $(idDivImg).fadeOut(fadeOut);
   }
 
-  setNumSlide();
+  setInfosSlide();
 
   var file = images[slideIndexCur];
 
