@@ -1,7 +1,7 @@
 var imagesPages = {
    page1: {
       label : 'News',
-      files : [ 'res/img01_My_project_in_Salalh_with_the_Japanese_team.jpg', 'res/img02_visit_of_Qasra_with_japanese_team.jpg', ],
+      files : [ 'res/img01_My_project_in_Salalh_with_the_Japanese_team.jpg', 'res/img02_visit_of_Qasra_with_japanese_team.jpg', 'res/img04_My_consultancy_for_the_city_of_Osaka.jpg',],
    }, 
 
 };
